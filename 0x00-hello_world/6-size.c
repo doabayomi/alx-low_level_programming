@@ -2,7 +2,6 @@
 
 /**
  * main - The standard main function of C
- * 
  * Description: This is a program that prints the sizes of various data types
  * in C measured in bytes. This value will vary based on operating system.
  * Return: 0

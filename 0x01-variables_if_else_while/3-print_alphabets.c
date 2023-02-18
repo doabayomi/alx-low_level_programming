@@ -2,12 +2,10 @@
 
 /**
  * main - The main function in C
- * @ch: The character variable for counting the current
- * letter
  *
  * Description: The program counts from the letter a to z
  * in both uppercase and lowercase
- * Return: 0 
+ * Return: 0
  */
 int main(void)
 {

@@ -4,13 +4,12 @@
 /* more headers goes there */
 
 /**
- * main - the standard main function in c
- * @n: The random variable I'm working with.
- * @l: The last digit of n
+ * main - the standard main function in C
  *
- * Description: This is a program that prints whether n is 
- * greater than, equal to, and less than 5
- * Return: 0  
+ * Description: This is a program that checks certain statuses about n
+ * based on the number n itself like whether it is positive or negative
+ * and some other conditions printed out.
+ * Return: 0
  */
 int main(void)
 {
@@ -29,7 +28,7 @@ int main(void)
 	}
 	else if (l == 0)
 	{
-		printf("and is 0");	
+		printf("and is 0");
 	}
 	else if (l < 6 && l != 0)
 	{

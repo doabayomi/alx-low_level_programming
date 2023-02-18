@@ -2,7 +2,6 @@
 
 /**
  * main - the standard function of main in c
- * @ch: Current alphabet in the process
  *
  * Description: This program prints the the entire alphabet
  * from a to z in lowercase

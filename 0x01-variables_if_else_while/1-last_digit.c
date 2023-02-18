@@ -33,7 +33,7 @@ int main(void)
 	}
 	else if (l < 6 && l != 0)
 	{
-		printf("and is less than 6 and not 0")
+		printf("and is less than 6 and not 0");
 	}
 	printf("\n");
 	return (0);

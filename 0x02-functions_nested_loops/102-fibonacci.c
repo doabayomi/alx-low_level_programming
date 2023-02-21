@@ -16,7 +16,8 @@ int main(void)
 		printf("%lu", current);
 		previous = next;
 		next = current;
-		printf(", ");
+		if (i != 49)
+			printf(", ");
 	}
 	printf("\n");
 	return (0);

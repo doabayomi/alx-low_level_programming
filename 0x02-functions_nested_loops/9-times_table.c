@@ -17,7 +17,7 @@ void times_table(void)
 	{
 		for (multiplied = 0; multiplied <= 9; multiplied++)
 		{
-			if (multiplied != 9 && multiplied > 0)
+			if (multiplied > 0)
 			{
 				printf(",");
 				if ((multiplier * multiplied) < 10)

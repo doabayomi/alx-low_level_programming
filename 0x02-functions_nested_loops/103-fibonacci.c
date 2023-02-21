@@ -7,7 +7,6 @@
  */
 int main(void)
 {
-	int i;
 	unsigned long int previous = 0, sum = 0, next = 1, current;
 
 	while (1)

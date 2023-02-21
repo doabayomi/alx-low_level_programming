@@ -10,13 +10,14 @@ int main(void)
 	int i = 0;
 	unsigned long int previous = 0, next = 1, current;
 
-	while (i < 98)
+	while (i < 95)
 	{
 		current = previous + next;
 		printf("%lu", current);
 		previous = next;
 		next = current;
-		if (i != 97)
+		/* Dont ask me how I got this number, I am just playing */
+		if (i != 94)
 			printf(", ");
 		i++;
 	}

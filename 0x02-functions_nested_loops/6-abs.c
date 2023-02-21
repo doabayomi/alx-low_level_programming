@@ -15,6 +15,6 @@ int _abs(int num)
 	 * The absolute value can be found by squaring the number and
 	 * finding the square root.
 	 */
-	abs_val = int(sqrt(double(num**2)));
+	abs_val = sqrt((double)num ** 2);
 	return (abs_val);
 }

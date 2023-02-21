@@ -10,7 +10,7 @@
  */
 int _abs(int num)
 {
-	int abs_val
+	int abs_val;
 
 	/**
 	 * The absolute value can be found by squaring the number and

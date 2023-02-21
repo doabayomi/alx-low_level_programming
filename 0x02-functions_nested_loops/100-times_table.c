@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * times_table - Program to print the nine times table
- * @n: Number to be multiplied to
+ * print_times_table - Program to print a custom times table
+ * @n: Number for the times table
  * Return: void
  */
 void print_times_table(int n)

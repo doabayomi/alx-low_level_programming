@@ -15,6 +15,7 @@ int print_last_digit(int num)
 
 	if (last_digit < 0)
 	{
+		/* Gotta ensure the digit is not negative */
 		last_digit = abs(last_digit);
 	}
 	_putchar(last_digit + '0');

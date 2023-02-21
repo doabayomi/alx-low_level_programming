@@ -1,5 +1,5 @@
 # Ignoring the header file with the _putchar() definition
-main.h
+_putchar.c
 
 #Ignore all custom shell scripts
 *.sh

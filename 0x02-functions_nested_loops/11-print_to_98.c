@@ -31,4 +31,5 @@ void print_to_98(int n)
 		/* In this case, we assume the number is 98 */
 		printf("%d", n);
 	}
+	printf("\n");
 }

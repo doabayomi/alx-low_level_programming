@@ -20,7 +20,15 @@ void times_table(void)
 			printf("%d", (multiplier * multiplied));
 			if (multiplied < 9)
 			{
-				printf(",\t");
+				printf(",");
+				if ((multiplier * multiplied) < 10)
+				{
+					printf("  ");
+				}
+				else
+				{
+					printf(" ");
+				}
 			}
 		}
 		printf("\n");

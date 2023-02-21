@@ -13,7 +13,7 @@ int main(void)
 	for (i = 0; i < 50; i++)
 	{
 		current = previous + next;
-		printf("%d", current);
+		printf("%lu", current);
 		previous = next;
 		next = current;
 		printf(", ");

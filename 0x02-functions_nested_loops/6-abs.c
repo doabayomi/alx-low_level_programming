@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -10,11 +11,15 @@
 int _abs(int num)
 {
 	int abs_val;
+	double tmp;
 
 	/**
 	 * The absolute value can be found by squaring the number and
 	 * finding the square root.
 	 */
-	abs_val = sqrt((double)num ** 2);
+	tmp = (num * num);
+	abs_val = (int)sqrt(tmp);
 	return (abs_val);
 }
+
+

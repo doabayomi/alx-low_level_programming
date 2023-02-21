@@ -8,7 +8,7 @@
 int main(void)
 {
 	int i;
-	int previous = 0, next = 1, current;
+	unsigned long int previous = 0, next = 1, current;
 
 	for (i = 0; i < 50; i++)
 	{

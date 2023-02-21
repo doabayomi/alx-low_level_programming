@@ -12,7 +12,7 @@ int print_last_digit(int num)
 {
 	/* The last digit is the remainder of the number when divided by 10 */
 	int last_digit = num % 10;
-	
+
 	if (last_digit < 0)
 	{
 		last_digit = abs(last_digit);

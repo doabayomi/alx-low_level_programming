@@ -3,3 +3,6 @@ main.h
 
 #Ignore all custom shell scripts
 *.sh
+
+#Ignore all vi hidden files
+*.swp

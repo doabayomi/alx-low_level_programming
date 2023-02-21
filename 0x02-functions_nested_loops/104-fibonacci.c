@@ -7,10 +7,10 @@
  */
 int main(void)
 {
-	int i;
+	int i = 0;
 	unsigned long int previous = 0, next = 1, current;
 
-	for (i = 0; i < 98; i++)
+	while (i < 98)
 	{
 		current = previous + next;
 		printf("%lu", current);
@@ -18,6 +18,7 @@ int main(void)
 		next = current;
 		if (i != 97)
 			printf(", ");
+		i++;
 	}
 	printf("\n");
 	return (0);

@@ -8,6 +8,7 @@
 int main(void)
 {
 	int i = 0;
+
 	long double previous = 0, next = 1, current;
 
 	while (i < 98)

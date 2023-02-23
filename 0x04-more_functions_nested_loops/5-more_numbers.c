@@ -9,13 +9,15 @@
 void more_numbers(void)
 {
 	int i, j;
-	char n[] = "01234567891011121314";
-	int n_length = sizeof(n)/sizeof(n[0]);
 
 	for (i = 0; i < 10; i++)
 	{
-		for (j = 0; j < n_length; j++)
-			_putchar(n[j]);
+		for (j = 0; j < 15; j++)
+		{
+			if (j >= 10)
+				_putchar((j / 10) + '0');
+			_putchar((j % 10) + '0');
+		}
 		_putchar('\n');
 	}
 }

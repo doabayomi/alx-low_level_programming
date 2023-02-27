@@ -18,10 +18,9 @@ int _strlen(char *s)
 	 * null escape character '\0' which automatically exists in double
 	 * quotes "".
 	 */
-	int i, len;
+	int i;
 
-	for (len = 1; s[i] != '\0'; len++)
-		i++;
-	return (len);
+	for (i = 0; s[i] != '\0'; i++);
+	return (i + 1);
 }
 

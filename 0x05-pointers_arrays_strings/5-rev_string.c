@@ -10,5 +10,15 @@
  */
 void rev_string(char *s)
 {
-	/* Work has been slow here. Attend to later */
+	int i, count;
+	char tmp = s[0];
+
+	count = strlen(s);
+	for (i = 0; i < count; i++)
+	{
+		count--;
+		tmp = s[i];
+		s[i] = s[count];
+		s[count] = tmp;
+	}
 }

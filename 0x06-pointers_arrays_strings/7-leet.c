@@ -13,9 +13,10 @@ char *leet(char *str)
 {
 	char from[] = {'a', 'e', 'o', 't', 'l'};
 	char to[] = {'4', '3', '0', '7', '1'};
-	int i, j;
+	int i, j, len;
 
-	for (i = 0; i <= strlen(str); i++)
+	len = strlen(str);
+	for (i = 0; i <= len; i++)
 	{
 		for (j = 0; j < 5; j++)
 		{

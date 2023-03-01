@@ -9,13 +9,13 @@
  */
 char *cap_string(char *str)
 {
-	int i, j;
+	int i, j, len = strlen(str);
 	char sep[] = " \t\n,;.!?\"(){}";
-	int len = strlen(sep);
+	int t_count = strlen(sep);
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; i < len; i++)
 	{
-		for (j = 0; j < len; j++)
+		for (j = 0; j < t_count; j++)
 		{
 			if (str[i] == sep[j])
 			{

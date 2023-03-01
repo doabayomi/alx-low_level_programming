@@ -3,23 +3,26 @@
 #include "main.h"
 
 /**
- * *_strcat - concatenates two strings and retains the other while adding null.
+ * *_strncat - Concatenates n characters from one string to another.
  * @dest: String to be concatenated to.
  * @src: String to be concatenated from.
  *
- * Return: Pointer to the destination string.
+ * Return: Pointer to destination string.
  */
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 	size_t dest_len = strlen(dest);
 	size_t src_len = strlen(src);
 	size_t i = 0;
 
-	while (i <= src_len)
+	while (i < n)
 	{
 		dest[dest_len + i] = src[i];
 		i++;
 	}
+
+	if (n <= src_len)
+		dest[dest_len + n] = '\0';
 
 	return (dest);
 }

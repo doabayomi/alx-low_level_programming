@@ -3,32 +3,46 @@
 #include <stdbool.h>
 
 /**
+ * match_sep - checks if a character is a defined seperator.
+ * @l: Input String.
+ *
+ * Return: true if there is a match, false otherwise.
+ */
+
+bool match_sep(char l)
+{
+	int i = 0;
+	char sep[] = " \t\n,;.!?\"(){}";
+	int no_cases = 13;
+
+	for (; i < no_cases; i++)
+	{
+		if (l == sep[i])
+			return (true);
+	}
+	return (false);
+}
+
+/**
  * *cap_string - Capitalizes words in a string.
- * @s: Input String.
+ * @str: Input String.
  *
  * Return: Pointer to the input string.
  */
-char *cap_string(char *s)
+char *cap_string(char *str)
 {
-	int i, j;
-	char sep[] = " \t\n,;.!?\"(){}";
-	int t_count = strlen(sep);
-	bool is_lower, match_sep;
+	int i = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (str[i])
 	{
-		is_lower = s[i] >= 'a' && s[i] <= 'z';
-		if (!(is_lower))
-			continue;
-		else
-		{
-			for (j = 0; j < t_count; j++)
-			{
-				match_sep = s[i - 1] == sep[j];
-				if ((is_lower && match_sep) || i == 0)
-					s[i] = s[i] - 32;
-			}
-		}
+		while (!(str[i] >= 'a' && str[i] <= 'z'))
+			i++;
+
+		if (match_sep(str[i - 1]) || i == 0)
+			str[i] -= 32;
+
+		i++;
 	}
-	return (s);
+
+	return (str);
 }

@@ -4,7 +4,7 @@
 
 /**
  * *cap_string - Capitalizes words in a string.
- * @str: Input String.
+ * @s: Input String.
  *
  * Return: Pointer to the input string.
  */

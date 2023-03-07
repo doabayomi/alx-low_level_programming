@@ -12,8 +12,8 @@
 */
 unsigned int _strspn(char *s, char *accept)
 {
-	int match_set = strlen(accept);
-	int i = 0, j = 0, count = 0, match = 0, next = 0;
+	unsigned int match_set = strlen(accept);
+	unsigned int i = 0, j = 0, count = 0, match = 0, next = 0;
 
 	while (s[i] != '\0')
 	{

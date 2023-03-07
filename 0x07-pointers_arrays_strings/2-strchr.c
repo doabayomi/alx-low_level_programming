@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 /**
  * *_strchr - Returns the first instance of a character in a string.
@@ -10,10 +9,10 @@
 */
 char *_strchr(char *s, char c)
 {
-	int i, s_len = strlen(s);
+	int i;
 
 	/* We make the loop break and return the pointer if there is a match */
-	for (i = 0; i < s_len; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == c)
 			return (s + i);

@@ -25,9 +25,7 @@ char *_strchr(char *s, char c)
 
 	/* Returning the values based on the match */
 	if (match == 1)
-	{
 		return (s + i);
-	}
 	else
-		return (NULL);
+		return ('\0');
 }

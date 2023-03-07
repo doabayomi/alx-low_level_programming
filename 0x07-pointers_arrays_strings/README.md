@@ -5,3 +5,4 @@ This is the third section of the _Pointers, Arrays and Strings_ section in the A
 * I have started putting myself under the limitations of `_putchar`
 * The terminal isn't supposed to be the first place of engagement if you don't have anything in mind
 * I have finished my first month officially even though we started this since January.
+* Don't ignore the parameter data types. if the input is `unsigned int` use `unsigned int` in the local variables and not `int`

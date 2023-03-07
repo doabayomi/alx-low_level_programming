@@ -19,5 +19,5 @@ char *_strchr(char *s, char c)
 	}
 
 	/* If it goes through wihout a match returns NULL */
-	return ('\0');
+	return (0);
 }

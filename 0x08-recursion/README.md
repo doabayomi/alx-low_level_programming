@@ -1,7 +1,9 @@
 ## Description
 This is the first project exploring the concept of recursion in C.
 >
-To make the project relatively harder the use of static variables were eliminated but due to the nature of the projects requested, one needed variables that would remain fixed during the recursive process. In order to bypass that restraint, we employed the use of global variables in the functions file.
+Normally, the simplest bypass to this constraint would be global variables but Betty (_one of the things I hate the most in this program_) like the devil she is does not allow the use of global variables i.e. variables outside functions.
+>
+Thankfully, I got the Eureka moment fast enough. There are two types of recursion, if you don't see your way with the first type think along the second type. Good luck to anyone trying this shit again.
 
 ## Global Variable Names
 * `len` normally signifies the length of a string;

@@ -9,6 +9,6 @@
 */
 int main(int argc, char const *argv[])
 {
-	printf("%d", argc - 1);
+	printf("%d\n", argc - 1);
 	return (0);
 }

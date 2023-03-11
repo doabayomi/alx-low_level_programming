@@ -15,7 +15,7 @@ int confirm_nondigits(char const *d)
 
 	for (i = 0; i < len; i++)
 	{
-		if ( !(isdigit(d[i])) )
+		if (!(isdigit(d[i])))
 			return (1);
 	}
 

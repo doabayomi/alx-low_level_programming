@@ -7,7 +7,7 @@
  *
  * Return: 0.
 */
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
 	printf("My name is %s", argv[0]);
 	return (0);

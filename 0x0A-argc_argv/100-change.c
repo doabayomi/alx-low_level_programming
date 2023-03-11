@@ -26,14 +26,14 @@ int main(int argc, char const *argv[])
 	{
 		for (i = 0; i < len; i++)
 		{
-			if (count == 0 && change > cents[i])
+			if (count == 0 && change >= cents[i])
 			{
 				count = change / cents[i];
 				remainder = change % cents[i];
 			}
 			else
 			{
-				if (remainder != 0 && remainder > cents[i])
+				if (remainder != 0 && remainder >= cents[i])
 				{
 					count += remainder/cents[i];
 					remainder = remainder % cents[i];

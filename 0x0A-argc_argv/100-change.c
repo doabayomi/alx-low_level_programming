@@ -20,6 +20,7 @@ int main(int argc, char const *argv[])
 
 	change = atoi(argv[1]);
 	int cents[] = {25, 10, 5, 2, 1};
+
 	len = sizeof(cents) / sizeof(cents[0]);
 
 	if (change > 0)
@@ -35,7 +36,7 @@ int main(int argc, char const *argv[])
 			{
 				if (remainder != 0 && remainder >= cents[i])
 				{
-					count += remainder/cents[i];
+					count += remainder / cents[i];
 					remainder = remainder % cents[i];
 				}
 			}

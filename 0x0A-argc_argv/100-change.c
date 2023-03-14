@@ -15,7 +15,6 @@ int main(int argc, char const *argv[])
 
 	count = 0;
 	remainder = 0;
-	change = atoi(argv[1]);
 	len = sizeof(cents) / sizeof(cents[0]);
 
 	if (argc != 2)
@@ -24,6 +23,7 @@ int main(int argc, char const *argv[])
 		return (1);
 	}
 
+	change = atoi(argv[1]);
 	if (change > 0)
 	{
 		for (i = 0; i < len; i++)

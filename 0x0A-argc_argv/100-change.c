@@ -10,18 +10,19 @@
 */
 int main(int argc, char const *argv[])
 {
+	int i, count, remainder, change, len;
+	int cents[] = {25, 10, 5, 2, 1};
+
+	count = 0;
+	remainder = 0;
+	change = atoi(argv[1]);
+	len = sizeof(cents) / sizeof(cents[0]);
+
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-
-	int i, change, count = 0, remainder = 0, len;
-
-	change = atoi(argv[1]);
-	int cents[] = {25, 10, 5, 2, 1};
-
-	len = sizeof(cents) / sizeof(cents[0]);
 
 	if (change > 0)
 	{

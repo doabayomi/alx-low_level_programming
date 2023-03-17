@@ -8,7 +8,7 @@
  * @size: The size of each member in the array.
  *
  * Description: Allocates a memory space with the give number of members and
- * each member is of a given size. Also all the members are set to 0
+ * each member is of a given size. Also all the members are set to 0.
  * Return: void. NULL if parameters are equal to zero or memory
 */
 void *_calloc(unsigned int nmemb, unsigned int size)

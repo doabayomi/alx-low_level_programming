@@ -1,11 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "function_pointers.h"
+#include <string.h>
 #include "3-calc.h"
 
-int main(int argc, char const *argv[])
+/**
+ * main - performs operation
+ * @argc: Number of arguments
+ * @argv: Array storing argument inputs
+ *
+ * Return: 0
+ */
+int main(int argc, char *argv[])
 {
-	int a, b, res;
+	int a, b;
 	char *s;
 
 	if (argc != 4)
@@ -18,20 +25,18 @@ int main(int argc, char const *argv[])
 	b = atoi(argv[3]);
 	s = argv[2];
 
-	if ((s == '%' || s == '/') && b == 0)
+	if ((s[0] == '%' || s[0] == '/') && b == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
 
-	res = (get_op_func(s))(a, b);
-
-	if (res == NULL)
+	if (get_op_func(s) == NULL || strlen(s) != 1)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	printf("%d", res);
+	printf("%d\n", get_op_func(s)(a, b));
 	return (0);
 }

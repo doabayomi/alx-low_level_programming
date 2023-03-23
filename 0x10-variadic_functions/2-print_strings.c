@@ -23,7 +23,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		else
 			printf("%s", s);
 
-		if (i != n && seperator != NULL)
+		if (i != n && separator != NULL)
 			printf("%s", separator);
 	}
 	va_end(p);

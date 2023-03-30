@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "main.h"
+#include "lists.h"
 
 /**
  * add_node - adds a node to the beginning a linked list.

@@ -6,40 +6,33 @@
 #include <unistd.h>
 
 /**
- * read_textfile - reads a file and prints its content to standard output
- * @filename: Filename to print from.
- * @letters: Number of letters to be printed
+ * create_file - Creates a file with predetermined content.
+ * @filename: A pointer to the name of file to be created
+ * @text_content: A pointer to string to input to the file
  *
- * Return: the actual number of letters it could read and print
+ * Return: If the function fails -1.
+ * Otherwise returns 1.
  */
-ssize_t read_textfile(const char *filename, size_t letters)
+int create_file(const char *filename, char *text_content)
 {
-	ssize_t print = 0, rd = 0;
-	int fd = 0;
-	char *buf = malloc(letters);
+	int o, w, len = 0;
 
-	if (!buf)
-		return (0);
-	if (!filename)
-		return (0);
-	fd = open(filename, O_RDONLY, 0600);
-	if (fd == -1)
-		return (0);
-	rd = read(fd, buf, letters);
-	if (rd == -1)
+	if (filename == NULL)
+		return (-1);
+
+	if (text_content != NULL)
 	{
-		free(buf);
-		close(fd);
-		return (0);
+		for (len = 0; text_content[len];)
+			len++;
 	}
-	print = write(STDOUT_FILENO, buf, rd);
-	if (print == -1 || print != rd)
-	{
-		free(buf);
-		close(fd);
-		return (0);
-	}
-	free(buf);
-	close(fd);
-	return (print);
+
+	o = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	w = write(o, text_content, len);
+
+	if (o == -1 || w == -1)
+		return (-1);
+
+	close(o);
+
+	return (1);
 }

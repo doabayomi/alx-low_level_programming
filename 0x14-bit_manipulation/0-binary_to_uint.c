@@ -17,13 +17,13 @@ unsigned int binary_to_uint(const char *b)
 	if (b == NULL)
 		return (0);
 
-	while (ind >= 0 && i < bit_length)
+	while (i < bit_length)
 	{
 		if ((b[ind] != '1') && (b[ind] != '0'))
 			return (0);
 
 		if (b[ind] == '1')
-			converted_value += (int)pow(2, i);
+			converted_value += 1 << i;
 
 		ind--;
 		i++;

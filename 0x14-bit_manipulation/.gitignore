@@ -1,0 +1,6 @@
+# All main c files
+main.c
+_putchar.c
+
+# output files
+test

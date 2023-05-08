@@ -67,7 +67,7 @@ int main(int argc, char **argv)
 	status = close(file_to_desc);
 	if (status == -1)
 		print_close_error(file_to_desc);
-
+	free(buf);
 	return (0);
 }
 

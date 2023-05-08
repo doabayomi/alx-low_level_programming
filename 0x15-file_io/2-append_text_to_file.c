@@ -23,16 +23,12 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (file_desc == -1)
 		return (-1);
 
-	if (text_content == NULL)
+	if (text_content != NULL)
 	{
-		status = close(file_desc);
-		if (status == -1)
+		bytes_written = write(file_desc, text_content, strlen(text_content));
+		if (bytes_written == -1)
 			return (-1);
 	}
-
-	bytes_written = write(file_desc, text_content, strlen(text_content));
-	if (bytes_written == -1)
-		return (-1);
 
 	status = close(file_desc);
 	if (status == -1)

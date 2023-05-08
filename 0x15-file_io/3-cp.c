@@ -28,13 +28,19 @@ void print_write_error(char *file_to)
 }
 
 /**
- * print_close_error - prints close error
- * @file_desc: File descriptor of file not closed.
+ * close_file_desc - closes file descriptor
+ * @file_desc: File descriptor of file to be closed.
  */
-void print_close_error(int file_desc)
+void close_file_desc(int file_desc)
 {
-	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_desc);
-	exit(100);
+	int status;
+
+	status = close(file_desc);
+	if (status == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_desc);
+		exit(100);
+	}
 }
 
 /**
@@ -55,15 +61,18 @@ void print_input_error(void)
  */
 int main(int argc, char **argv)
 {
-	char *file_from, *file_to;
-	int status, bytes_written, bytes_read, file_to_desc, file_from_desc;
-	char *buf = malloc((BUFSIZE * sizeof(char)) + 1);
+	char *file_from, *file_to, *buf;
+		int bytes_written, bytes_read, file_to_desc, file_from_desc;
 
 	if (argc != 3)
 		print_input_error();
 
 	file_from = argv[1];
 	file_to = argv[2];
+	buf = malloc((BUFSIZE * sizeof(char)) + 1);
+	if (buf == NULL)
+		print_write_error(file_to);
+
 	file_from_desc = open(file_from, O_RDONLY);
 	if (file_from_desc == -1)
 		print_read_error(file_from);
@@ -72,23 +81,17 @@ int main(int argc, char **argv)
 	if (file_to_desc == -1)
 		print_write_error(file_to);
 
-	bytes_read = read(file_from_desc, buf, BUFSIZE);
-	while (bytes_read > 0)
+	while ((bytes_read = read(file_from_desc, buf, BUFSIZE)) > 0)
 	{
 		bytes_written = write(file_to_desc, buf, bytes_read);
 		if (bytes_written != bytes_read)
 			print_write_error(file_to);
-		bytes_read = read(file_from_desc, buf, BUFSIZE);
 	}
 	if (bytes_read == -1)
 		print_read_error(file_from);
 
-	status = close(file_from_desc);
-	if (status == -1)
-		print_close_error(file_from_desc);
-	status = close(file_to_desc);
-	if (status == -1)
-		print_close_error(file_to_desc);
+	close_file_desc(file_from_desc);
+	close_file_desc(file_to_desc);
 	free(buf);
 	return (0);
 }

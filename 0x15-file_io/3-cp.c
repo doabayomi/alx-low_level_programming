@@ -53,7 +53,7 @@ void close_file_desc(int file_desc, char *buf)
 /**
  * print_input_error - prints input error
  */
-void print_input_error()
+void print_input_error(void)
 {
 	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 	exit(97);

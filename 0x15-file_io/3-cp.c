@@ -7,30 +7,52 @@
 
 #define BUFSIZE 1024
 
+/**
+ * print_read_error - prints read error.
+ * @file_from: File being printed
+ */
 void print_read_error(char *file_from)
 {
 	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 	exit(98);
 }
 
+/**
+ * print_write_error - prints write error
+ * @file_to: File being printed to
+ */
 void print_write_error(char *file_to)
 {
 	dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
 	exit(99);
 }
 
+/**
+ * print_close_error - prints close error
+ * @file_desc: File descriptor of file not closed.
+ */
 void print_close_error(int file_desc)
 {
 	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_desc);
 	exit(100);
 }
 
-void print_input_error()
+/**
+ * print_input_error - prints input error
+ */
+void print_input_error(void)
 {
 	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 	exit(97);
 }
 
+/**
+ * main - copies one file to another
+ * @argc: Number of arguments including the command name
+ * @argv: Array of arguments
+ *
+ * Return: 0
+ */
 int main(int argc, char **argv)
 {
 	char *file_from, *file_to;

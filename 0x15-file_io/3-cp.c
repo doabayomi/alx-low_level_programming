@@ -84,7 +84,7 @@ int main(int argc, char **argv)
 	while ((bytes_read = read(file_from_desc, buf, BUFSIZE)) > 0)
 	{
 		bytes_written = write(file_to_desc, buf, bytes_read);
-		if (bytes_written != bytes_read)
+		if (bytes_written == -1)
 			print_write_error(file_to);
 	}
 	if (bytes_read == -1)

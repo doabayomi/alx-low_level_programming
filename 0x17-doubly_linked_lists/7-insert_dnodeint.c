@@ -1,6 +1,22 @@
 #include "lists.h"
 
 /**
+ * check_prev_node - confirm if prev_node is not null
+ * @prev_node: previous node
+ * @new_node: node_to be_made
+ *
+ * Return: 1 if works, 0 if it fails
+ */
+int check_prev_node(dlistint_t *prev_node, dlistint_t *new_node)
+{
+	if (prev_node == NULL)
+	{
+		free(new_node);
+		return (1);
+	}
+	return (0);
+}
+/**
  * *insert_dnodeint_at_index - inserts a node in a linked list
  * @h: Head of the linked list
  * @idx: Index for the node to be inserted to
@@ -31,14 +47,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	for (; i < (idx - 1); i++)
 	{
-		if (prev_node == NULL)
+		if (check_prev_node(prev_node, new_node) == 1)
 			return (NULL);
 		prev_node = prev_node->next;
 	}
-
+	if (check_prev_node(prev_node, new_node) == 1)
+		return (NULL);
 	new_node->n = n;
 	new_node->next = prev_node->next;
-	(new_node->next)->prev = new_node;
+	if (new_node->next != NULL)
+		(new_node->next)->prev = new_node;
 	prev_node->next = new_node;
 	return (new_node);
 }
